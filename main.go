@@ -1,7 +1,7 @@
 package main
 
 import (
-	"log"
+	"fmt"
 	"net/http"
 
 	"meteo/helpers"
@@ -13,6 +13,10 @@ func main() {
 
 	mux := routes.Creer()
 
-	log.Println("Site lancé sur http://localhost:8080")
-	log.Fatal(http.ListenAndServe(":8080", mux))
+	fmt.Println("Site lancé sur http://localhost:8080")
+	if err != nil {
+		fmt.Fatal(http.localhost:8080, err)
+		return
+	}
 }
+
