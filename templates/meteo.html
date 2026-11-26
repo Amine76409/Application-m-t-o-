@@ -1,14 +1,14 @@
-{{define "meteo"}}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>meteo
-    </title>
-</head>
-<body>
-    
-</body>
-</html>
+{{define "meteo.html"}}
+{{template "head"}}
+<h1>Météo de {{.Commune.Nom}}</h1>
+{{range .Jours}}
+<div class="carte">
+    <p>Date : {{.Date.Format "2006-01-02"}}</p>
+    <p>Min : {{.Min}}</p>
+    <p>Max : {{.Max}}</p>
+    <p>Code météo : {{.Code}}</p>
+</div>
+{{end}}
+<a href="/">Nouvelle recherche</a>
+{{template "foot"}}
 {{end}}

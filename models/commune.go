@@ -7,8 +7,9 @@ type Centre struct {
 type Commune struct {
 	Code         string   `json:"code"`
 	Nom          string   `json:"nom"`
-	CodesPostaux string   `json:"codesPostaux"`
+	CodesPostaux []string `json:"codesPostaux"`
 	Population   int      `json:"population"`
-	Centre       Centre   `json:"centre"`
-	
+	Centre       struct {
+		Coordinates []float64 `json:"coordinates"`
+	} `json:"centre"`
 }

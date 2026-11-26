@@ -1,13 +1,12 @@
-{{define "index"}}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
-</head>
-<body>
-    
-</body>
-</html>
+{{define "index.html"}}
+{{template "head"}}
+<h1>Météo des 7 prochains jours</h1>
+<form method="GET" action="/ville">
+    <input type="text" name="q" placeholder="Nom d'une ville" value="{{.Valeur}}">
+    <button type="submit">Rechercher</button>
+</form>
+{{if .Message}}
+<p>{{.Message}}</p>
+{{end}}
+{{template "foot"}}
 {{end}}

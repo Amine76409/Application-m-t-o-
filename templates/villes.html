@@ -1,13 +1,15 @@
-{{define "villes"}}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>villes</title>
-</head>
-<body>
-    
-</body>
-</html>
+{{define "villes.html"}}
+{{template "head"}}
+<h1>Résultats pour « {{.Saisie}} »</h1>
+<p>Plusieurs communes trouvées, choisis la bonne :</p>
+<ul>
+{{range .Communes}}
+    <li>
+        <a href="/meteo?code={{.Code}}">{{.Nom}}</a>
+        (code INSEE : {{.Code}}, {{.Population}} habitants)
+    </li>
+{{end}}
+</ul>
+<a href="/">Retour à l'accueil</a>
+{{template "foot"}}
 {{end}}

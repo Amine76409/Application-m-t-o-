@@ -10,13 +10,11 @@ import (
 
 func main() {
 	helpers.ChargerTemplates()
-
-	mux := routes.Creer()
+	routes.Creer()
 
 	fmt.Println("Site lancé sur http://localhost:8080")
+	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
-		fmt.Fatal(http.localhost:8080, err)
-		return
+		fmt.Println("Erreur :", err)
 	}
 }
-
